@@ -16,7 +16,7 @@ public class CharacterAttack : MonoBehaviour {
         _animator = GetComponent<Animator>();
     }
     private void Update() {
-        if (Input.GetButton("Fire1")) {
+        if (Input.GetButtonDown("Fire1")) {
             _hitting = true;
             _hitEndTime = Time.time + hitActiveDuration;
             hitBox.SetActive(true);
