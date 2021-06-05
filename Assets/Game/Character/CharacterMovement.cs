@@ -19,11 +19,11 @@ public class CharacterMovement : MonoBehaviour {
         var forward = cameraTransform.forward;
         forward.y = 0;
         forward = forward.normalized;
-        
+
         var right = cameraTransform.right;
         right.y = 0;
         right = right.normalized;
-        
+
         var movement = (_input.y * speed * forward) + (_input.x * speed * right);
         movement.y = _rigidbody.velocity.y;
         _rigidbody.velocity = movement;
