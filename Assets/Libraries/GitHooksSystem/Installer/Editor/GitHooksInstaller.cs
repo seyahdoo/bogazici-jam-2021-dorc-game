@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -52,8 +51,6 @@ namespace LapsFramework.GitHooks {
         internal static void Install() {
             var hooksDirectoriesList = FindHooksDirectories();
             foreach (var directory in hooksDirectoriesList) {
-                //unset hooksPath variable on config
-                UnsetGitHooksVariableOnGitHooksPath(directory);
                 // Clear Hooks Path Directory
                 DeleteDirectory(directory);
                 // Copy Source Hooks Path to Hooks Path
@@ -76,17 +73,6 @@ namespace LapsFramework.GitHooks {
             var hooksDirectoriesList = new List<DirectoryInfo>();
             RecursivelyAddHookFolder(hooksDirectoriesList, new DirectoryInfo(DestinationSearchPath));
             return hooksDirectoriesList;
-        }
-        private static void UnsetGitHooksVariableOnGitHooksPath(DirectoryInfo directory) {
-            var configFilePath = directory.Parent?.GetFiles("config")[0];
-            if (configFilePath != null) {
-                var configFileContent = File.ReadAllText(configFilePath.FullName);
-                if (configFileContent.Contains("hooksPath =")) {
-                    var configLines = File.ReadAllLines(configFilePath.FullName);
-                    var newConfigLines = configLines.Where(l => !l.Contains("hooksPath ="));
-                    File.WriteAllLines(configFilePath.FullName, newConfigLines);
-                }
-            }
         }
         private static void RecursivelyAddHookFolder(List<DirectoryInfo> list, DirectoryInfo path) {
             if (path.Name == "hooks") {
