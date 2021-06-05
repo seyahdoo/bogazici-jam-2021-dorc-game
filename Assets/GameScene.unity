@@ -10260,7 +10260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756073456}
   m_LocalRotation: {x: -0.3254692, y: -0.35155892, z: 0.13184614, w: -0.8678092}
-  m_LocalPosition: {x: 11.964337, y: 14.967063, z: 63.599052}
+  m_LocalPosition: {x: -19.235664, y: 14.967061, z: -12.00095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1701874261}
@@ -15816,6 +15816,7 @@ GameObject:
   - component: {fileID: 1196250519}
   - component: {fileID: 1196250522}
   - component: {fileID: 1196250523}
+  - component: {fileID: 1196250524}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15882,7 +15883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196250518}
   m_LocalRotation: {x: -0.3254692, y: -0.35155892, z: 0.13184614, w: -0.8678092}
-  m_LocalPosition: {x: 11.964337, y: 14.967063, z: 63.599052}
+  m_LocalPosition: {x: -19.235664, y: 14.967061, z: -12.00095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16036,6 +16037,23 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1196250524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196250518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a5e49e5f6a8394e41b48c814068e536f, type: 2}
 --- !u!4 &1200946813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8322852470960287741, guid: 89ce41214d4c42346b30f496af6f5def, type: 3}
@@ -27651,7 +27669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1251079101400400118, guid: 267302d097699db44933f3e3a4faa3a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.5
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 1251079101400400118, guid: 267302d097699db44933f3e3a4faa3a6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27659,7 +27677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1251079101400400118, guid: 267302d097699db44933f3e3a4faa3a6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 75.5
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1251079101400400118, guid: 267302d097699db44933f3e3a4faa3a6, type: 3}
       propertyPath: m_LocalRotation.w
