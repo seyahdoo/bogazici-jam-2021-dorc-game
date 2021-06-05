@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature|walk (1)
+  m_Name: walk
   m_Speed: 3
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -6372505770197538151, guid: dce2f422fae595748bd0d1a60356b566, type: 3}
+  m_Motion: {fileID: 7400000, guid: 81de34582ac436d43b9555ab3b177a78, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -59,7 +59,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature|ATTACK
+  m_Name: attack
   m_Speed: 6
   m_CycleOffset: 0
   m_Transitions:
@@ -73,7 +73,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 4418833167389719548, guid: dce2f422fae595748bd0d1a60356b566, type: 3}
+  m_Motion: {fileID: 7400000, guid: a3b01a8ea58a951479bc9b3889f1884a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
