@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace LapsFramework.GitHooks {
+namespace GitHooksInstaller {
     public class GitHooksInstallWindow : EditorWindow {
         private bool _rememberMyChoiceToggle = true;
         private void OnGUI() {

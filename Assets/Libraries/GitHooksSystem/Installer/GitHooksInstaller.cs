@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace LapsFramework.GitHooks {
+namespace GitHooksInstaller {
     public static class GitHooksInstaller {
         private const string REMEMBER_KEY = "git_hooks_installer_remembered_choice";
         private const string DESTINATION_SEARCH_PATH = ".git/";

@@ -1,6 +1,6 @@
 {
     "name": "GitHooksSystemAssembly",
-    "rootNamespace": "",
+    "rootNamespace": "GitHooksInstaller",
     "references": [],
     "includePlatforms": [
         "Editor"
