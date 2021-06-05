@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace LapsFramework.GitHooks {
     public static class GitHooksInstaller {
-        private const string RememberKey = "git_hooks_installer_remembered_choice";
-        private const string DestinationSearchPath = ".git/";
-        private const string DestinationParentPath = ".git/hooks/";
+        private const string REMEMBER_KEY = "git_hooks_installer_remembered_choice";
+        private const string DESTINATION_SEARCH_PATH = ".git/";
+        private const string DESTINATION_PARENT_PATH = ".git/hooks/";
         [InitializeOnLoadMethod]
         private static void OnLoad() {
             if (RememberedChoice == RememberChoice.None && InstallNeeded) {
@@ -24,8 +24,8 @@ namespace LapsFramework.GitHooks {
             Install = 2,
         }
         internal static RememberChoice RememberedChoice {
-            get => (RememberChoice) EditorPrefs.GetInt(RememberKey);
-            set => EditorPrefs.SetInt(RememberKey, (int) value);
+            get => (RememberChoice) EditorPrefs.GetInt(REMEMBER_KEY);
+            set => EditorPrefs.SetInt(REMEMBER_KEY, (int) value);
         }
         private static bool InstallNeeded {
             get {
@@ -39,7 +39,7 @@ namespace LapsFramework.GitHooks {
 
                 int destinationVersion = 0;
                 try {
-                    destinationVersion = int.Parse(File.ReadAllText(Path.Combine(DestinationParentPath, "version.txt")));
+                    destinationVersion = int.Parse(File.ReadAllText(Path.Combine(DESTINATION_PARENT_PATH, "version.txt")));
                 }
                 catch (Exception) {
                     /* ignored */
@@ -71,7 +71,7 @@ namespace LapsFramework.GitHooks {
         }
         private static List<DirectoryInfo> FindHooksDirectories() {
             var hooksDirectoriesList = new List<DirectoryInfo>();
-            RecursivelyAddHookFolder(hooksDirectoriesList, new DirectoryInfo(DestinationSearchPath));
+            RecursivelyAddHookFolder(hooksDirectoriesList, new DirectoryInfo(DESTINATION_SEARCH_PATH));
             return hooksDirectoriesList;
         }
         private static void RecursivelyAddHookFolder(List<DirectoryInfo> list, DirectoryInfo path) {
