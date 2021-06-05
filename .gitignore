@@ -80,3 +80,5 @@ Recordings/*
 *.unitypackage.meta
 *.dll.mdb.meta
 
+*.blend1
+
