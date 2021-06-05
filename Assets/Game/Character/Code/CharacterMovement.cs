@@ -1,18 +1,23 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))]
 public class CharacterMovement : MonoBehaviour {
+    public float speed = 4f;
     private Rigidbody _rigidbody;
     private Vector2 _input;
     private Camera _camera;
-    public float speed = 4f;
+    private Animator _animator;
+    private static readonly int SpeedStringHash = Animator.StringToHash("Speed");
     private void Awake() {
         _rigidbody = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
         _camera = Camera.main;
     }
     private void Update() {
         _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         _input = Vector2.ClampMagnitude(_input, 1f);
+        _animator.SetFloat(SpeedStringHash, _input.magnitude);
     }
     private void FixedUpdate() {
         var cameraTransform = _camera.transform;
