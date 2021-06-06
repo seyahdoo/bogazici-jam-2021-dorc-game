@@ -1,13 +1,15 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Bot : MonoBehaviour {
     public float stoppingDistance;
     public float speed;
+    public Action OnStartFollowing;
     private bool _following;
     private Transform _target;
     private Rigidbody _rigidbody;
-    private void Awake() {
+    protected void Awake() {
         var player = FindObjectOfType<CharacterMovement>();
         _target = player.transform;
         _rigidbody = GetComponent<Rigidbody>();
@@ -38,5 +40,6 @@ public class Bot : MonoBehaviour {
     public void StartFollowing() {
         _following = true;
         _rigidbody.isKinematic = false;
+        OnStartFollowing?.Invoke();
     }
 }
